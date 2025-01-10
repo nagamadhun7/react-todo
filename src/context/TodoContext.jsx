@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { createContext, useContext, useReducer } from 'react'
 
-const TodoContext = () => {
+
+import { initialState, reducer } from './todoReducer';
+
+const TodoContext = createContext();
+
+export const TodoProvider = ({children}) => {
+
+  const [state, dispatch] = useReducer(reducer, initialState)
+
   return (
-    <div>TodoContext</div>
+    <TodoContext.Provider value = {{state, dispatch}}>
+      {children}
+    </TodoContext.Provider>
   )
 }
 
-export default TodoContext
+
+export const useTodoContext = () => {
+  return useContext(TodoContext)
+}
