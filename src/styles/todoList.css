@@ -1,0 +1,14 @@
+.status-buttons{
+    margin-top: 10px;
+    display: flex;
+    width: 500px;
+    height: 50px;
+    background-color:lavenderblush;
+    gap: 5px;
+}
+
+.status-buttons button{
+    border: 1px solid black;
+    border-radius: 5%;
+    flex: 1;
+}

@@ -34,13 +34,6 @@ const Todo = () => {
       </div>
       <button className="addButton" onClick={handleAddTodo}>Add</button>
       </div>
-     
-
-      <div className="status-buttons">
-        <button>All</button>
-        <button>Pending!</button>
-        <button>Completed</button>
-      </div>
       <TodoList />
     </>
   );
