@@ -10,11 +10,15 @@ const TodoListItem = ({todo}) => {
   const toggleTodo = () => {
     dispatch({type:'toggleTodo', payload: todo.id})
   }
+
+  const deleteTodo = () => {
+    dispatch({type: 'deleteTodo', payload: todo.id})
+  }
   return (
     <div className={`todo-container ${todo.isDone? 'todo-completed' : ''}`}>
       <button className='toggle-toDo' onClick={toggleTodo}>{todo.isDone ? '✅' : '✔️'}</button>
       <p>{todo.text.text}</p>
-      <button className='deleteTodo'>❌</button>
+      <button className='deleteTodo' onClick={deleteTodo}>❌</button>
     </div>
   )
 }
