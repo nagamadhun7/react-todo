@@ -10,6 +10,16 @@
     padding: 10px 20px;
 }
 
+.todo-completed{
+    background-color: lightgray;
+    opacity: 0.7;
+}
+
+.todo-completed p{
+    text-decoration: line-through;
+
+}
+
 .toggle-toDo, .deleteTodo{
     cursor: pointer;
     border: none;
