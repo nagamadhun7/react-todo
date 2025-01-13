@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTodoContext } from '../context/TodoContext'
 import "../styles/todoList.css";
+import TodoListItem from './TodoListItem'
 
 
 const TodoList = () => {
@@ -13,7 +14,7 @@ const TodoList = () => {
         <button>Completed</button>
       </div>
       <div>{state.todos.map(todo => (
-      <li key={todo.id}>{todo.text.text}</li>
+      <TodoListItem key={todo.id} todo={todo} />
     ))}</div>
     </>
    
