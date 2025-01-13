@@ -18,13 +18,15 @@ const TodoList = () => {
   return (
     <>
      <div className="status-buttons">
-        <button onClick={() => setStatus('all')}>All</button>
-        <button onClick={() => setStatus('pending')}>Pending!</button>
-        <button onClick={() => setStatus('completed')}>Completed</button>
+        <button className={status === 'all' ? 'active' : ''} onClick={() => setStatus('all')}>All</button>
+        <button className={status === 'pending' ? 'active' : ''}  onClick={() => setStatus('pending')}>Pending!</button>
+        <button className={status === 'completed' ? 'active' : ''}  onClick={() => setStatus('completed')}>Completed</button>
       </div>
-      <div>{filteredTodos.map(todo => (
+      <div>
+        {filteredTodos.length ? (filteredTodos.map(todo => (
       <TodoListItem key={todo.id} todo={todo} />
-    ))}</div>
+    ))) : <p className='empty'>Empty!</p>}
+    </div>
     </>
    
   )
